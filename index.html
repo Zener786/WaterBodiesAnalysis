@@ -1,12 +1,13 @@
- <!DOCTYPE html>
- <html lang = "en">
- <head>
- 	<meta charset= "utf-8">
- 	<title>
- 		Terrain Analysis Using GLDAS Data in Python
- 	</title> 
+<!DOCTYPE html>
+<html lang="en">
 
- 	<!-- <script type="text/javascript">
+<head>
+	<meta charset="utf-8">
+	<title>
+		Terrain Analysis Using GLDAS Data in Python
+	</title>
+
+	<!-- <script type="text/javascript">
  		function jsDropDown(src,wid,h,alt)
  		{
  			var img =document.createElement("img");
@@ -25,42 +26,54 @@
 
  	</script>
  -->
- 	<script>
-function myFunction() {
+	<script>
+		function myFunction() {
 
 
 
-	var d = document.getElementById("ddselect");
- 	var img1 = d.options[d.selectedIndex].text;
-  var x = document.createElement("IMG");
-  x.setAttribute("src", img1+".jpg");
-  x.setAttribute("width", "304");
-  x.setAttribute("height", "228");
-  x.setAttribute("alt", "The Pulpit Rock");
-  document.body.appendChild(x);
-}
-</script>
- </head>
-<body 
+			var d = document.getElementById("ddselect");
+			var img1 = d.options[d.selectedIndex].value;
+			var img = document.getElementById("imageElem");
+			if (img) {
+				img.src = img1;
+			} else {
+				var x = document.createElement("img");
+				x.src = img1;
+				x.setAttribute("width", "304");
+				x.setAttribute("height", "228");
+				x.setAttribute("alt", "The Pulpit Rock");
+				x.id = 'imageElem';
+				document.body.appendChild(x);
+			}
+			if (!img1)
+				document.body.removeChild(img);
+		}
+	</script>
+</head>
 
-style ="background-color: skyblue;">
+<body style="background-color: skyblue;">
 
-<h3 align = "center">
- 
+	<h3 align="center">
 
-	<font face="Lato" size="6"> TERRAIN ANALYSIS  </font>
 
-	<br/><br/><br/>
-	<select id= "ddselect" onchange="myFunction()">
-		<option>---Select Data---</option>
-		<option>watercrisis</option>
-		<option>stateshit</option>
-		
-		
-	</select>
+		<font face="Lato" size="6"> TERRAIN ANALYSIS </font>
 
-<br/>
+		<br /><br /><br />
+		<select id="ddselect" onchange="myFunction()">
+			<option value="">---Select Data---</option>
+			<option value='./pics/watercrisis.jpg'>watercrisis</option>
+			<option value='./pics/stateshit.jpg'>stateshit</option>
 
+
+		</select>
+
+		<br />
+
+		<button onclick="jsDropDown('/home/zainab/website1/watercrisis.jpg',500,500,'Personal Photo')">
+			Display pic
+		</button>
 
 </body>
+
+
 </html>

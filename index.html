@@ -4,17 +4,66 @@
  	<meta charset= "utf-8">
  	<title>
  		Terrain Analysis Using GLDAS Data in Python
- 	</title>
+ 	</title> 
+
+ 	<!-- <script type="text/javascript">
+ 		function jsDropDown(src,wid,h,alt)
+ 		{
+ 			var img =document.createElement("img");
+ 			img.src=src;
+ 			img.width=wid;
+ 			img.height = h;
+ 			img.alt = alt; 
+ 			// var d = document.getElementById("ddselect");
+ 			// var img1 = d.options[d.selectedIndex].text;
+ 			// var pict = document.createElement("img")
+ 			// pict.src = "/home/zainab/website1/"+ img1+".jpg";
+ 			 document.body.appendchild(img)
+
+
+ 		}
+
+ 	</script>
+ -->
+ 	<script>
+function myFunction() {
+
+
+
+	var d = document.getElementById("ddselect");
+ 	var img1 = d.options[d.selectedIndex].text;
+  var x = document.createElement("IMG");
+  x.setAttribute("src", "/home/zainab/website1/"+img1+".jpg");
+  x.setAttribute("width", "304");
+  x.setAttribute("height", "228");
+  x.setAttribute("alt", "The Pulpit Rock");
+  document.body.appendChild(x);
+}
+</script>
  </head>
 <body 
 
-style ="background-color: blue;">
+style ="background-color: skyblue;">
 
 <h3 align = "center">
  
 
-	<font face="Lato" size="6"> TERRAIN ANALYSIS HELLO  </font>
+	<font face="Lato" size="6"> TERRAIN ANALYSIS  </font>
 
+	<br/><br/><br/>
+	<select id= "ddselect" onchange="myFunction()">
+		<option>---Select Data---</option>
+		<option>watercrisis</option>
+		<option>stateshit</option>
+		
+		
+	</select>
+
+<br/>
+
+<button onclick="jsDropDown('/home/zainab/website1/watercrisis.jpg',500,500,'Personal Photo')"> 
+	Display pic
+</button>
 
 </body>
 </html>
